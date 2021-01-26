@@ -38,9 +38,9 @@ jobs:
     name: Build, Test, and Release
     runs-on: ubuntu-latest
     env:
-      STRAVAIG_SOLUTION: src/XXXX.sln
-      STRAVAIG_TESTS: XXXX.Tests
-      STRAVAIG_PROJECT: XXXX
+      STRAVAIG_SOLUTION: src/Stravaig.Jailbreak.sln
+      STRAVAIG_TESTS: Stravaig.Jailbreak.Tests
+      STRAVAIG_PROJECT: Stravaig.Jailbreak
     
     steps:
       - name: Check out code
