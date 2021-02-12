@@ -2,6 +2,19 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Stravaig Jailbreak</Title>
+        <Authors>Stravaig Projects</Authors>
+        <Description>A package that allows objects to be jail-broken so that test code can see what is inside them.</Description>
+        <Copyright>©2020-2021 Stravaig Projects. See licence for more information.</Copyright>
+        <PackageProjectUrl>https://github.com/Stravaig-Projects/Stravaig.Jailbreak/blob/main/README.md</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/Stravaig-Projects/Stravaig.Jailbreak</RepositoryUrl>
+        <PackageIcon>stravaig-icon.png</PackageIcon>
+        <PackageTags>reflection diagnostics</PackageTags>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="stravaig-icon.png" Pack="true" PackagePath="" />
+    </ItemGroup>
 
 </Project>
