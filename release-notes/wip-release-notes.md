@@ -10,6 +10,7 @@ Date: ???
 
 - Jailbreak private property getters
 - Jailbreak private field (get)
+- Support getting derived members from a base reference.
 
 ### Miscellaneous
 
