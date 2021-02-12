@@ -1,5 +1,6 @@
 using System;
 using System.Dynamic;
+using System.Linq;
 using System.Reflection;
 
 namespace Stravaig.Jailbreak
@@ -22,8 +23,9 @@ namespace Stravaig.Jailbreak
             MemberInfo[] members = _type.GetMember(binder.Name, IsPropertyOrField, AllAccessModifiers | BindingFlags.Instance | BindingFlags.GetField | BindingFlags.GetProperty);
             if (members.Length == 0)
             {
-                result = null;                
-                return false;
+                throw new JailerException(
+                    $"Unable to find member with the name {binder.Name}.",
+                    GetAcceptedMembers());
             }
 
             if (members.Length > 1)
@@ -52,6 +54,16 @@ namespace Stravaig.Jailbreak
             }
             
             throw new InvalidOperationException($"{member} is not a property or field.");
+        }
+
+        private MemberInfo[] GetAcceptedMembers()
+        {
+            var members = _type.GetMembers(AllAccessModifiers | BindingFlags.Instance | BindingFlags.GetField |
+                                           BindingFlags.GetProperty);
+            return members
+                .Where(m => (m.MemberType & IsPropertyOrField) != 0)
+                .ToArray();
+
         }
     }
 }
