@@ -5,15 +5,15 @@ using System.Reflection;
 
 namespace Stravaig.Jailbreak
 {
-    public class InstanceJailbreak<T> : Jailbreak
+    public class InstanceJailbreak : Jailbreak
     {
         private const MemberTypes IsPropertyOrField = MemberTypes.Property | MemberTypes.Field;
         private const BindingFlags AllAccessModifiers = BindingFlags.Public | BindingFlags.NonPublic;
         
-        private readonly T _object;
+        private readonly object _object;
 
-        public InstanceJailbreak(T obj)
-            : base(typeof(T))
+        public InstanceJailbreak(object obj)
+            : base(obj.GetType())
         {
             _object = obj;
         }

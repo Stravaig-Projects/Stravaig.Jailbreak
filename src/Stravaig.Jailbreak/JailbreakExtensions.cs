@@ -2,9 +2,9 @@ namespace Stravaig.Jailbreak
 {
     public static class JailbreakExtensions
     {
-        public static InstanceJailbreak<T> Jailbreak<T>(this T obj)
+        public static InstanceJailbreak Jailbreak(this object obj)
         {
-            return new InstanceJailbreak<T>(obj);
+            return new InstanceJailbreak(obj);
         }
     }
 }
