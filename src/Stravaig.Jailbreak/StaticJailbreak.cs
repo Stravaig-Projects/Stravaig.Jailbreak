@@ -1,5 +1,6 @@
 using System;
 using System.Dynamic;
+using System.Reflection;
 
 namespace Stravaig.Jailbreak
 {
@@ -14,5 +15,7 @@ namespace Stravaig.Jailbreak
             var member = GetMemberInfo(binder);
             return InvokeMember(member, null, out result);
         }
+
+        protected override BindingFlags AllAccessModifiers => base.AllAccessModifiers | BindingFlags.Static;
     }
 }
