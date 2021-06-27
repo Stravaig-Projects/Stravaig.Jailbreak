@@ -22,7 +22,6 @@ namespace Stravaig.Jailbreak.Tests
         [Test]
         public void GetPrivateInt()
         {
-            var obj = new InstanceFields();
             StaticFields.SetPrivateInt(123);
             dynamic cracked = typeof(StaticFields).Jailbreak();
             ((int) cracked._privateInt).ShouldBe(123);
