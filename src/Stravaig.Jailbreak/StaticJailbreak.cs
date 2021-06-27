@@ -12,10 +12,16 @@ namespace Stravaig.Jailbreak
         
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
-            var member = GetMemberInfo(binder);
+            var member = GetPropertyOrFieldInfo(binder.Name);
+            return InvokeMember(member, null, out result);
+        }
+        
+        public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
+        {
+            var member = GetMethodInfo(binder.Name);
             return InvokeMember(member, null, out result);
         }
 
-        protected override BindingFlags AllAccessModifiers => base.AllAccessModifiers | BindingFlags.Static;
+        protected override BindingFlags AccessModifiers => base.AccessModifiers | BindingFlags.Static;
     }
 }
