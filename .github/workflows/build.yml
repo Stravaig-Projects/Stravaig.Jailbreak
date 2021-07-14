@@ -2,7 +2,7 @@ name: Stravaig Jailbreak
 on: 
   push:
     branches: 
-      - main
+      - the-sacred-timeline
 
     paths-ignore:
       - 'README.md'
